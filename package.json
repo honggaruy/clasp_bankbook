@@ -1,0 +1,15 @@
+{
+  "name": "clasp_bankbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "appscript.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.17"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
