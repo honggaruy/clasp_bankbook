@@ -1,5 +1,5 @@
 ﻿
-﻿﻿namespace fileManager{
+namespace fileManager{
     var newGFolder = DriveApp.getFolderById("16K05RlmkOiUvo0MPleXWajdpCMsAUOf8");  // 신규 구글 시트가 저장되는 폴더 ID
     var newEFolder = DriveApp.getFolderById("1DnKWGO5WumsYbQbEb999hC3jb_brQ8b0");  // 신규 엑셀 파일이 저장되는 폴더 ID
     var oldGFolder = DriveApp.getFolderById("1ndwKCmesPb-yNeEN_hc5bk1jABMEzkLC");  // 처리완료된 구글 시트가 저장되는 폴더 ID
