@@ -12,6 +12,7 @@ function onOpen() {
         .addItem('초기화', 'afterCheck')
         .addToUi();
 }
+
 /**
  * 사용한 라이브러리 : BetterLog ( https://github.com/peterherrmann/BetterLog )
  *                엑셀파일에 로그를 저장하기 위해 채용
@@ -22,9 +23,25 @@ function onOpen() {
     export var Logger = BetterLog.useSpreadsheet('1qizXc_-X4iWYMUdcR9_7JetGKIV_frjeUPESSWQnAAU');
     // Momentjs를 사용하기 위해 글로벌 객체 지정
     export var moment = Moment.moment;
+    export var QUnitGS2 = QUnitGS2;
  }
 
 var convExl2Gsheet = Testexceltogsheet.convertExcelToGoogleSheets;
+
+/* Qunit 결과를 보기위한 웹 앱 (테스트 배포로는 현재 확인이 안됨. 그냥 배포로 해야함 )
+ * 참조 링크 : http://qunitgs2.com/examples/step-by-step-tutorial
+ */
+function doGet() {
+    Library.QUnitGS2.init();   // initialize the library
+
+    QunitTests.tesfsForQunit()  // Test는 별도 파일로 구현 
+
+    return Library.QUnitGS2.getHtml();  //  HTML 결과로 반환
+}
+
+function getResultsFromServer() {
+    return Library.QUnitGS2.getResultsFromServer();
+}
 
 function myFunction() {
     // Trigger로 실행시 Active 상태가 아니므로 강제 모드 변환 필요 

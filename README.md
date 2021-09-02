@@ -41,3 +41,26 @@
 1. `업데이트 실행` 클릭
 1. 제대로 업데이트 되면 `최종 거래일`에 마지막 거래일이 업데이트된다.
 
+# 유닛 테스트 플랫폼 추가
+
+* 일단 두가지를 추가해 봤다
+
+## QUnitGS2
+
+* 홈페이지 : [http://qunitgs2.com/](http://qunitgs2.com/)
+* 매뉴얼 : [Step-by-step tutorial](http://qunitgs2.com/examples/step-by-step-tutorial)
+* 테스트 결과 보기 
+    * 온라인 스크립트 에디터에서 Google Apps Script를 웹 앱으로 배포한다
+    * 배포된 웹 앱 링크로 가면 Qunit 결과가 웹페이지로 뜬다
+* 테스트 추가하기
+    * Qunit 사이트를 참고한다 . [Qunit Doc](https://api.qunitjs.com/)
+
+## GasT
+
+* 홈페이지 : [https://github.com/kevincar/gast](https://github.com/kevincar/gast)
+* 테스트 결과 보기
+    * 온라인 에디터에서 tests.gs로 이동후 gastTestRunner() 함수를 실행한다
+    * 테스트 결과를 로그로 확인할 수 있다
+* 테스트 추가하기
+    * 홈페이지를 참조한다
+
