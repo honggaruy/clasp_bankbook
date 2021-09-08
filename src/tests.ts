@@ -12,20 +12,20 @@ if ((typeof GasTap) === 'undefined') { // GasT Initialization. (only if not init
   eval(cs)
 } // Class GasTap is ready for use now!
 
-let tap: GasTap = new GasTap();
 
 function gastTestRunner() {
+  let tap: GasTap = new GasTap();
 
-    tap.test('do calculation right', function (t: test) {
-        let i: number = 3 + 4;
-        t.equal(i, 7, 'calc 3 + 4 = 7 right');
-    });
+  tap.test('do calculation right', function (t: test) {
+      let i: number = 3 + 4;
+      t.equal(i, 7, 'calc 3 + 4 = 7 right');
+  });
 
-    tap.test('Spreadsheet exist', function (t: test) {
-        let url: string = 'https://docs.google.com/spreadsheets/d/1-JyrBAU6F-74z7h3_km6ojdxiclSo-OGe-oLUGQNgac/edit#gid=0'
-        let ss: Types.Ss = SpreadsheetApp.openByUrl(url)
-        t.ok(ss, 'Spread 시트 열기 성공')
-    });
+  tap.test('Spreadsheet exist', function (t: test) {
+      let url: string = 'https://docs.google.com/spreadsheets/d/1-JyrBAU6F-74z7h3_km6ojdxiclSo-OGe-oLUGQNgac/edit#gid=0'
+      let ss: Types.Ss = SpreadsheetApp.openByUrl(url)
+      t.ok(ss, 'Spread 시트 열기 성공')
+  });
 
-    tap.finish();
+  tap.finish();
 }

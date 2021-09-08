@@ -21,9 +21,12 @@ function onOpen() {
  namespace Library {
     // 로그를 기록할 스프레드시트 지정
     export var Logger = BetterLog.useSpreadsheet('1qizXc_-X4iWYMUdcR9_7JetGKIV_frjeUPESSWQnAAU');
-    // Momentjs를 사용하기 위해 글로벌 객체 지정
-    export var moment = Moment.moment;
-    export var QUnitGS2 = QUnitGS2;
+    export var moment = Moment.moment;   // Momentjs를 사용하기 위해 글로벌 객체 지정
+    export var QUnitGS2 = QUnitGS2;     // 유닛 테스트 플랫폼 추가
+ }
+
+ namespace SsConfig {
+     export const excludeSheets = ['대시보드'] // 먼저 통장계좌 처리에서 제외할 시트 등록 
  }
 
 var convExl2Gsheet = Testexceltogsheet.convertExcelToGoogleSheets;
@@ -33,9 +36,7 @@ var convExl2Gsheet = Testexceltogsheet.convertExcelToGoogleSheets;
  */
 function doGet() {
     Library.QUnitGS2.init();   // initialize the library
-
-    QunitTests.tesfsForQunit()  // Test는 별도 파일로 구현 
-
+    QunitTests.testsForQunit()  // Test는 별도 파일로 구현 
     return Library.QUnitGS2.getHtml();  //  HTML 결과로 반환
 }
 
@@ -58,7 +59,7 @@ function myFunction() {
     }
     for (let currentSheet of ss.getSheets()) {
         // 먼저 통장계좌 처리에서 제외할 시트 처리
-        if (['대시보드'].includes(currentSheet.getName()))
+        if (SsConfig.excludeSheets.includes(currentSheet.getName()))
             continue;
         const process = new sheetNamespace.BankProcessor(currentSheet);
         //var oldData = new sheetNamespace.LegacyIBKAccount(currentSheet);
