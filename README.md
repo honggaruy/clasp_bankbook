@@ -1,17 +1,19 @@
 ﻿# about clasp_bankbook
 
-통장 사용내역을 수시로 읽어와 구글시트에 누적하는 작업을 **반자동화** 한다.
+[![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
 
-# Limitations
+> 통장 사용내역을 수시로 읽어와 구글시트에 누적하는 작업을 **반자동화** 한다.
+
+## Limitations
 
 * 은행에 자동으로 접속하여 데이타를 긁어오진 못함.
     * 대부분의 은행이 엑셀 다운로드를 지원함.
     * 엑셀 다운로드 받는것 까지는  수동으로 진행해야 함
-* 아직 내가 사용하는 "기업은행"과 "카카오통장"의 엑셀파일 형식만 지원
+* 아직 내가 사용하는 "기업은행"과 "카카오뱅크"에서 다운로드 받는 거래내역 엑셀파일 형식만 지원
 
-# Dependencies
+## Dependencies
 
-## 작업하던 시트
+### 작업하던 시트
 
 * 처음에 수작업으로 진행하다가 반복되는 작업만 자동화하는게 목표라서 기존에 작업하던 구글시트가 필요하다.
 * 구글시트의 구성
@@ -19,13 +21,13 @@
     * 각 계좌별 시트 
 * 따라서 이 프로젝트는 [standalone project](https://developers.google.com/apps-script/guides/standalone) 타입이 아닌 [Bound to G Suite Documents](https://developers.google.com/apps-script/guides/bound) 타입이다.
 
-## google-apps-script 라이브러리
+### google-apps-script 라이브러리
 
 * Test excel to google sheet - [요기](https://stackoverflow.com/a/49265306/9457247)서 가져온 코드를 라이브러리화
 * moment.js 라이브러리 - [momentjs.com](https://momentjs.com/) 에서 다운로드 받아 라이브러리화
 * BetterLog 라이브러리 - [momentjs.com](https://github.com/peterherrmann/BetterLog) 에 사용법이 나옴. 구글시트에 로그를 기록하는 모듈이다. 
 
-# 작업흐름
+## 작업흐름
 
 * [엑셀 파일을 구글 시트로 바꾸는 흐름](https://honggaruy.github.io/wiki/excel2gsheet/#2-전개)을 따라간다.
 
@@ -41,11 +43,11 @@
 1. `업데이트 실행` 클릭
 1. 제대로 업데이트 되면 `최종 거래일`에 마지막 거래일이 업데이트된다.
 
-# 유닛 테스트 플랫폼 추가
+## 유닛 테스트 플랫폼 추가
 
 * 일단 두가지를 추가해 봤다
 
-## QUnitGS2
+### QUnitGS2
 
 * 홈페이지 : [http://qunitgs2.com/](http://qunitgs2.com/)
 * 매뉴얼 : [Step-by-step tutorial](http://qunitgs2.com/examples/step-by-step-tutorial)
@@ -55,7 +57,7 @@
 * 테스트 추가하기
     * Qunit 사이트를 참고한다 . [Qunit Doc](https://api.qunitjs.com/)
 
-## GasT
+### GasT
 
 * 홈페이지 : [https://github.com/kevincar/gast](https://github.com/kevincar/gast)
 * 테스트 결과 보기
